@@ -1,8 +1,8 @@
 import dotenv from 'dotenv';
-
+import express from 'express';
 // Configure dotenv
 dotenv.config();
-import express from 'express';
+
 import mongoose from 'mongoose';
 import booksRoute from './routes/booksRoute.js';
 import cors from 'cors';
@@ -25,7 +25,7 @@ app.get('/', (request, response) => {
   
 app.use('/books', booksRoute);
 
-const PORT=5000;
+const PORT=3000;
 const mongoDBURL = process.env.MONGO_DB_URL;
 mongoose
   .connect(mongoDBURL)
